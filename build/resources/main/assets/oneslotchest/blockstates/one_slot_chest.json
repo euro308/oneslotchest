@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "oneslotchest:block/one_slot_chest_closed"
+    },
+    "open=true": {
+      "model": "oneslotchest:block/one_slot_chest_open"
+    }
+  }
+}
