@@ -1,10 +1,37 @@
 {
   "variants": {
-    "open=false": {
-      "model": "oneslotchest:block/one_slot_chest_closed"
-    },
-    "open=true": {
-      "model": "oneslotchest:block/one_slot_chest_open"
-    }
+    "facing=north,open=false,texture_state=0": { "model": "oneslotchest:block/one_slot_chest_sides_1", "y": 270 },
+    "facing=north,open=false,texture_state=1": { "model": "oneslotchest:block/one_slot_chest_sides_2", "y": 270 },
+    "facing=north,open=false,texture_state=2": { "model": "oneslotchest:block/one_slot_chest_sides_3", "y": 270 },
+
+    "facing=south,open=false,texture_state=0": { "model": "oneslotchest:block/one_slot_chest_sides_1", "y": 90 },
+    "facing=south,open=false,texture_state=1": { "model": "oneslotchest:block/one_slot_chest_sides_2", "y": 90 },
+    "facing=south,open=false,texture_state=2": { "model": "oneslotchest:block/one_slot_chest_sides_3", "y": 90 },
+
+    "facing=east,open=false,texture_state=0": { "model": "oneslotchest:block/one_slot_chest_sides_1", "y": 0 },
+    "facing=east,open=false,texture_state=1": { "model": "oneslotchest:block/one_slot_chest_sides_2", "y": 0 },
+    "facing=east,open=false,texture_state=2": { "model": "oneslotchest:block/one_slot_chest_sides_3", "y": 0 },
+
+    "facing=west,open=false,texture_state=0": { "model": "oneslotchest:block/one_slot_chest_sides_1", "y": 180 },
+    "facing=west,open=false,texture_state=1": { "model": "oneslotchest:block/one_slot_chest_sides_2", "y": 180 },
+    "facing=west,open=false,texture_state=2": { "model": "oneslotchest:block/one_slot_chest_sides_3", "y": 180 },
+
+
+
+
+
+    "facing=north,open=true,open_texture_state=0": { "model": "oneslotchest:block/one_slot_chest_top_open_1", "y": 270 },
+    "facing=north,open=true,open_texture_state=1": { "model": "oneslotchest:block/one_slot_chest_top_open_2", "y": 270 },
+
+    "facing=east,open=true,open_texture_state=0": { "model": "oneslotchest:block/one_slot_chest_top_open_1", "y": 0 },
+    "facing=east,open=true,open_texture_state=1": { "model": "oneslotchest:block/one_slot_chest_top_open_2", "y": 0 },
+
+    "facing=south,open=true,open_texture_state=0": { "model": "oneslotchest:block/one_slot_chest_top_open_1", "y": 90 },
+    "facing=south,open=true,open_texture_state=1": { "model": "oneslotchest:block/one_slot_chest_top_open_2", "y": 90 },
+
+    "facing=west,open=true,open_texture_state=0": { "model": "oneslotchest:block/one_slot_chest_top_open_1", "y": 180 },
+    "facing=west,open=true,open_texture_state=1": { "model": "oneslotchest:block/one_slot_chest_top_open_2", "y": 180 }
+
+
   }
 }

@@ -1,0 +1,17 @@
+{
+  "block.oneslotchest.open": {
+    "sounds": [ "oneslotchest:chest_open" ]
+  },
+  "block.oneslotchest.close": {
+    "sounds": [ "oneslotchest:chest_open" ]
+  },
+  "block.oneslotchest.idle": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "oneslotchest:chest_idle",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "oneslotchest:block/one_slot_chest_sides_1",
+    "down": "oneslotchest:block/one_slot_chest_bottom",
+    "up": "oneslotchest:block/one_slot_chest_top_closed",
+    "north": "oneslotchest:block/one_slot_chest_sides_3",
+    "east": "oneslotchest:block/one_slot_chest_sides_3",
+    "south": "oneslotchest:block/one_slot_chest_sides_3",
+    "west": "oneslotchest:block/one_slot_chest_sides_3"
+  }
+}
