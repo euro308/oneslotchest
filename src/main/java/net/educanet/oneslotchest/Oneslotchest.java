@@ -3,6 +3,7 @@ package net.educanet.oneslotchest;
 import net.educanet.oneslotchest.block.ModBlocks;
 import net.educanet.oneslotchest.blockentity.ModBlockEntities;
 import net.educanet.oneslotchest.client.screen.OneSlotChestScreen;
+import net.educanet.oneslotchest.database.DatabaseManager;
 import net.educanet.oneslotchest.menu.ModMenus;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -14,6 +15,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -25,6 +28,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+
+import static net.educanet.oneslotchest.block.OneSlotChestBlock.startH2Console;
+import static net.educanet.oneslotchest.block.OneSlotChestBlock.stopH2Console;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Oneslotchest.MODID)
@@ -51,8 +57,6 @@ public class Oneslotchest {
         ModBlocks.ITEMS.register(modEventBus);  // Important! Register items
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         ModMenus.MENUS.register(modEventBus);
-
-
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
@@ -94,6 +98,24 @@ public class Oneslotchest {
                 // Make sure this matches the name in your ModMenus class EXACTLY
                 MenuScreens.register(ModMenus.ONE_SLOT_CHEST_MENU.get(), OneSlotChestScreen::new);
             });
+        }
+    }
+
+    @Mod.EventBusSubscriber
+    public static class ServerEvents {
+        @SubscribeEvent
+        public static void onServerStarting(ServerStartingEvent event) {
+            // Inicializace JPA při startu serveru
+            System.out.println("nigga nigga");
+            DatabaseManager.initialize();
+            startH2Console();
+        }
+
+        @SubscribeEvent
+        public static void onServerStopped(ServerStoppedEvent event) {
+            // Ukončení JPA při zastavení serveru
+            stopH2Console();
+            DatabaseManager.shutdown();
         }
     }
 }
