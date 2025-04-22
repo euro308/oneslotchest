@@ -106,7 +106,6 @@ public class Oneslotchest {
         @SubscribeEvent
         public static void onServerStarting(ServerStartingEvent event) {
             // Inicializace JPA při startu serveru
-            System.out.println("nigga nigga");
             DatabaseManager.initialize();
             startH2Console();
         }
